@@ -21,7 +21,7 @@
 
 ### **Resources:**
 * [Intro to HTML, CSS, and JS]()
-* [MDN](https://developer.mozilla.org/en-US/docs/Learn)
+* [MDN](ex)
 
 ### Part 0.0 - Familiarize Yourself with the Project Structure
 
@@ -29,7 +29,7 @@
 
 ### Part 0.1 - Serve your project
 
-* Navigate to your project directory in the command line. Run the command ``python -m SimpleHTTPServer 8000``. This will expose the project on ``localhost:8000``. Navigate there in your browser to view your project.
+* Navigate to your project directory in the command line. Run the command ``python -m SimpleHTTPServer 8000``. This will expose the project on ``localhost:8000`` (Use googleChrome). Navigate there in your browser to view your project.
 
 ### Part 1.0 - Creating you JavaScript file
 
