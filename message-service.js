@@ -5,10 +5,10 @@ export default class MessageService {
 
     return new Promise(function (resolve, reject) {
     //Setup our listener to process completed requests
-    request.onLoad = function() {
+    request.onload = function() {
     if (request.status >= 200 && request.status < 300) {
 //        Console.log(JSON.parse(request.responseText)); //Returns Text
-            const thread = JSON.parse(request.responseText); //Returns Text
+            const threads = JSON.parse(request.responseText); //Returns Text
             resolve(threads);
         }
     else {
@@ -30,7 +30,7 @@ export default class MessageService {
 
     return new Promise(function (resolve, reject) {
     //Setup our listener to process completed requests
-    request.onLoad = function() {
+    request.onload = function() {
         if (request.status >= 200 && request.status < 300) {
             //If successful
             resolve(JSON.parse(request.responseText));

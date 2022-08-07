@@ -1,6 +1,6 @@
 import MessageService from "./message-service.js";
 
-let userId = "Lloyd Perez";
+let userId = "LloydJr";
 const messageService = new MessageService(userId);
 
 window.addEventListener("load", function() {
@@ -72,7 +72,7 @@ window.addEventListener("load", function() {
         const messageParagraph = document.createElement("p");
         const messageContent = document.createTextNode(message.message);
         const userIdContent = document.createTextNode(message.fromid);
-        userIdContent.appendChild(userIdContent);
+        userIdHeading.appendChild(userIdContent);
         messageParagraph.appendChild(messageContent);
         messageListItem
             .appendChild(userIdHeading)
