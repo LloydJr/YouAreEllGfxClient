@@ -43,7 +43,7 @@ export default class MessageService {
         }
     };
 
-    request.open("POST", `http://zipcode.rocks:8085/ids/${message.fromId}/messages`);
+    request.open("POST", "http://zipcode.rocks:8085/ids/LloydJr/messages");
 
     request.send(JSON.stringify(message));
     })
