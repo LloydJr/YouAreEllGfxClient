@@ -3,7 +3,7 @@ export default class MessageService {
     getAllMessages() {
     const request = new XMLHttpRequest();
 
-    new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
     //Setup our listener to process completed requests
     request.onLoad = function() {
     if (request.status >= 200 && request.status < 300) {
@@ -19,17 +19,33 @@ export default class MessageService {
             });
         }
     };
+
     request.open("GET", "http://zipcode.rocks:8085/messages");
 
     request.send();
-        });//.then(successCallback, errorCallback);
+        })//.then(successCallback, errorCallback);
+    }
+    createNewMessage(message) {
+    const request = new XMLHttpRequest();
 
-//    function successCallback(response) {
-//        Console.log("Promise is successful!") //Comes from the resolve methods
-//    }
-//
-//    function errorCallback(response) {
-//        Console.log("An error occurred...") //Comes from the reject methods
-//    }
+    return new Promise(function (resolve, reject) {
+    //Setup our listener to process completed requests
+    request.onLoad = function() {
+        if (request.status >= 200 && request.status < 300) {
+            //If successful
+            resolve(JSON.parse(request.responseText));
+        }
+        else {
+        reject({
+            status: request.status,
+            statusText: request.statusText
+        });
+        }
+    };
+
+    request.open("POST", `http://zipcode.rocks:8085/ids/${message.fromId}/messages`);
+
+    request.send(JSON.stringify(message));
+    })
     }
 }
