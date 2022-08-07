@@ -10,7 +10,6 @@ window.addEventListener("load", function() {
 
     function successCallback(response) {
     //Then data comes from the resolve method
-    //Console.log(response);
         populateThread(response);
     }
 
@@ -21,20 +20,8 @@ window.addEventListener("load", function() {
 
 });
 
-//    function populateMessages(messages){
-//     }
-
     function populateThread(messages){
     messages.forEach(message => {
-//    const messageListItem = document.createElement("LI");
-//    const userIdHeading = document.createElement("h3");
-//    const messageParagraph = document.createElement("p");
-//    const messageContent = document.createTextNode(message.message);
-//    const userIdContent = document.createTextNode(message.fromId);
-//    userIdHeading.appendChild(userIdContent);
-//    messageParagraph.appendChild(messageContent);
-//    messageListItem.appendChild(messageContent).appendChild(messageParagraph);
-//    document.getElementById("message-list").appendChild(messageListItem);
         addMessageToThread(message);
     })
     }
@@ -42,7 +29,7 @@ window.addEventListener("load", function() {
     function createFormListener() {
         const form = document.getElementById("new-message-form");
 
-        form.onSubmit = function (event) {
+        form.onsubmit = function (event) {
             //stop the regular form submission
             event.preventDefault();
 
@@ -56,7 +43,6 @@ window.addEventListener("load", function() {
 
         function successCallback(response) {
             //This data comes from the resolve method
-            //Console.log(response);
             addMessageToThread(response);
         }
 
